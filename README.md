@@ -11,11 +11,11 @@
 
 Do instalacji należy użyć polecenia wykonanego w katalogu docelowym:
 
-git clone <URL> 
+git clone <adres_URL> 
 
 lub
 
-git clone <URL> <nazwa_nowego_katalogu>
+git clone <adres_URL> <nazwa_nowego_katalogu>
 
 i później w tym katalogu należy wykonać polecenie 
 
