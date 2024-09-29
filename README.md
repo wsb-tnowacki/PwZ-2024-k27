@@ -9,7 +9,7 @@
 
 ## About Laravel
 
-Do instalacji należy użyć polecenia wykonanego w katalogu docelowym:
+Do instalacji należy użyć polecenia wykonanego w katalogu np. C:\xampp\htdocs :
 
 git clone <adres_URL> 
 
@@ -17,7 +17,7 @@ lub
 
 git clone <adres_URL> <nazwa_nowego_katalogu>
 
-i później w tym katalogu należy wykonać polecenie 
+i później w tym katalogu <nazwa_nowego_katalogu> należy wykonać polecenie 
 
 composer install
 
