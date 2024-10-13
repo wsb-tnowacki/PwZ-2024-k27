@@ -31,7 +31,8 @@ Route::get('/onas', function () {
 })->name('onas');
 
 Route::get('/dashboard', function () {
-    return view('dashboard');
+   // return view('dashboard');
+   return redirect()->route('start');
 })->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::middleware('auth')->group(function () {
