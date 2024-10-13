@@ -1,4 +1,4 @@
-@extends('szablon')
+@extends('layout.szablon')
 @section('tytul')
     Kontakt
 @endsection

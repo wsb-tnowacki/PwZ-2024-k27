@@ -15,11 +15,11 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('ogolny.welcome');
 })->name('start');
 
 Route::get('/kontakt', function () {
-    return view('kontakt');
+    return view('ogolny.kontakt');
 })->name('kontakt');
 Route::get('/onas', function () {
     $zadania = [
@@ -27,7 +27,7 @@ Route::get('/onas', function () {
         'Zadanie 2',
         'Zadanie 3'
     ];
-    return view('onas', ['zadania' => $zadania]);
+    return view('ogolny.onas', ['zadania' => $zadania]);
 })->name('onas');
 
 Route::get('/dashboard', function () {
