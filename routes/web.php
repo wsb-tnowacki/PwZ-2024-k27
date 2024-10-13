@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\OgolnyController;
+use App\Http\Controllers\PostController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
@@ -39,7 +40,7 @@ Route::get('/onas', function () {
 Route::controller(OgolnyController::class)->group(function(){
     Route::get('/','start')->name('start');
     Route::get('/kontakt', 'kontakt')->name('kontakt');
-    Route::get('/onas','onas')->name('onas');
+    Route::get('/onas','onas')->name('onas')->middleware('auth');
 });
 
 
@@ -55,3 +56,5 @@ Route::middleware('auth')->group(function () {
 });
 
 require __DIR__.'/auth.php';
+
+Route::resource('post',PostController::class);
