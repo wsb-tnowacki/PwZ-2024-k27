@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\PostStoreRequest;
 use App\Models\Post;
 use Illuminate\Http\Request;
 
@@ -28,7 +29,7 @@ class PostController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(PostStoreRequest $request)
     {
         $post = new Post();
 /*         $post->tytul = request('tytul');
@@ -36,8 +37,16 @@ class PostController extends Controller
         $post->email = request('email');
         $post->tresc = request('tresc');
         $post->save(); */
+        //dd($request);
+/*         $request->validate([
+            'tytul' => 'required|min:3|max:200',
+            'autor' => ['required','min:3','max:100'],
+            'email' => ['required','email:rfc,dns'],
+            'tresc' => ['required','min:5']
+        ]
+    ); */
         $post->create($request->all());
-        return redirect()->route('post.index');
+        return redirect()->route('post.index')->with('message', "Pomyślnie dodano post");
 
     }
 
@@ -61,7 +70,7 @@ class PostController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Post $post)
+    public function update(PostStoreRequest $request, Post $post)
     {
         //dd($request, $post);
         //return $request." <br> post: ".$post;
@@ -70,8 +79,8 @@ class PostController extends Controller
         $post->email = request('email');
         $post->tresc = request('tresc');
         $post->save(); */
-        $post->update($request->all());
-        return redirect()->route('post.index');
+        $post->update($request->validated());
+        return redirect()->route('post.index')->with('message', "Pomyślnie zmieniono post");
     }
 
     /**
@@ -80,6 +89,6 @@ class PostController extends Controller
     public function destroy(Post $post)
     {
         $post->delete();
-        return redirect()->route('post.index');
+        return redirect()->route('post.index')->with('message', "Pomyślnie usunieto post")->with('class', 'danger');
     }
 }
