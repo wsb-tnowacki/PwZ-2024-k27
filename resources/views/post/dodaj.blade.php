@@ -14,12 +14,14 @@
     </div>
     <div class="form-group">
         <label for="email">Email</label>
-        <input  class="form-control" type="text" name="email" id="email" placeholder="Podaj email autora postu" value="{{old('email')}}">
+        <input  class="form-control" type="email" name="email" id="email" placeholder="Podaj email autora postu" value="{{old('email')}}">
     </div>
     <div class="form-group">
         <label for="tresc">Treść</label>
         <textarea class="form-control" name="tresc" id="tresc"  rows="4">{{old('tresc')}}</textarea>
     </div>
-    <button class="btn btn-primary form-btn mt-3" type="submit">Dodaj post</button>
+    <button class="btn btn-success form-btn mt-2 m-1" type="submit">Dodaj post</button>
 </form>
+<a href="{{route('post.index')}}">
+    <button class="btn btn-primary form-btn mt-2 m-1" type="button">Powrót do listy</button></a>
 @endsection
