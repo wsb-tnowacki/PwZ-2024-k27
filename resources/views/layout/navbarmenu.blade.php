@@ -13,12 +13,12 @@
             <a class="nav-link" href="{{route('onas')}}">O nas</a>
           </li>
           <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <a class="nav-link dropdown-toggle" href="" role="button" data-bs-toggle="dropdown" aria-expanded="false">
               Posty
             </a>
             <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="#">Lista postów</a></li>
-              <li><a class="dropdown-item" href="#">Dodaj posta</a></li>
+              <li><a class="dropdown-item" href="{{route('post.index')}}">Lista postów</a></li>
+              <li><a class="dropdown-item" href="{{route('post.create')}}">Dodaj posta</a></li>
             </ul>
           </li>
         </ul>
