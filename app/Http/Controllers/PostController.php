@@ -31,11 +31,12 @@ class PostController extends Controller
     public function store(Request $request)
     {
         $post = new Post();
-        $post->tytul = request('tytul');
+/*         $post->tytul = request('tytul');
         $post->autor = $request['autor'];
         $post->email = request('email');
         $post->tresc = request('tresc');
-        $post->save();
+        $post->save(); */
+        $post->create($request->all());
         return redirect()->route('post.index');
 
     }
@@ -64,11 +65,12 @@ class PostController extends Controller
     {
         //dd($request, $post);
         //return $request." <br> post: ".$post;
-        $post->tytul = request('tytul');
+/*         $post->tytul = request('tytul');
         $post->autor = $request['autor'];
         $post->email = request('email');
         $post->tresc = request('tresc');
-        $post->save();
+        $post->save(); */
+        $post->update($request->all());
         return redirect()->route('post.index');
     }
 
@@ -77,6 +79,7 @@ class PostController extends Controller
      */
     public function destroy(Post $post)
     {
-        //
+        $post->delete();
+        return redirect()->route('post.index');
     }
 }

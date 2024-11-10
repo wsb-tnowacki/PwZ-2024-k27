@@ -23,6 +23,9 @@
         <td scope="row">{{date('j F Y',strtotime($post->created_at))}}</td>
         <td  scope="row" class="d-flex">
             <a href="{{route('post.edit', $post->id)}}"><button class="btn btn-success form-btn m-1">E</button></a>
+            <form action="{{route('post.destroy', $post->id)}}" method="post" onsubmit="return confirmDelete()">@csrf @method('DELETE')
+                <button class="btn btn-danger form-btn m-1" type="submit">X</button>
+            </form>
         </td>
     </tr>
 @endforeach
@@ -39,4 +42,10 @@
 </tbody>
 
 </table>
+<script>
+    function confirmDelete()
+    {
+        return confirm("Czy na pewno chcesz usunąć ten post?");
+    }
+</script>
 @endsection
