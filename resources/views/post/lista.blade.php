@@ -24,7 +24,7 @@
     <tr>
         <th scope="row" >{{$lp++}}</th>
         <td scope="row"><a href="{{route('post.show', $post->id)}}">{{$post->tytul}}</a></td>
-        <td scope="row">{{$post->autor}}</td>
+        <td scope="row">{{$post->user->name}}</td>
         <td scope="row">{{date('j F Y',strtotime($post->created_at))}}</td>
         @auth
         <td  scope="row" class="d-flex">

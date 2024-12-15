@@ -10,11 +10,11 @@
     </div>
     <div class="form-group">
         <label for="autor">Autor</label>
-        <input  class="form-control" type="text" name="autor" id="autor" placeholder="Podaj autora postu" value="{{$post->autor}}" disabled>
+        <input  class="form-control" type="text" name="autor" id="autor" placeholder="Podaj autora postu" value="{{$post->user->name}}" disabled>
     </div>
     <div class="form-group">
         <label for="email">Email</label>
-        <input  class="form-control" type="email" name="email" id="email" placeholder="Podaj email autora postu" value="{{$post->email}}" disabled>
+        <input  class="form-control" type="email" name="email" id="email" placeholder="Podaj email autora postu" value="{{$post->user->email}}" disabled>
     </div>
     <div>Data utworzenia: {{date('j F Y H:i:s',strtotime($post->created_at))}}</div>
     <div>Data modyfikacji: {{date('j F Y H:i:s',strtotime($post->updated_at))}}</div>
