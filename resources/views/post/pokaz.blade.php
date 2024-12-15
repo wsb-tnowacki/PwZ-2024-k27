@@ -23,7 +23,12 @@
         <textarea class="form-control" name="tresc" id="tresc"  rows="4" disabled>{{$post->tresc}}</textarea>
     </div>
     <div><a href="{{route('post.index')}}">
-    <button class="btn btn-primary form-btn mt-2 m-1" type="button">Powrót do listy</button></a><a href="{{route('post.edit', $post->id)}}"><button class="btn btn-success form-btn mt-2 m-1">Edytuj</button></a></div>
+    <button class="btn btn-primary form-btn mt-2 m-1" type="button">Powrót do listy</button></a>
+    @auth
+    <a href="{{route('post.edit', $post->id)}}"><button class="btn btn-success form-btn mt-2 m-1">Edytuj</button></a>   
+    @endauth
+
+</div>
 
 
 @endsection

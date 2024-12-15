@@ -2,8 +2,6 @@
 @section('tytul', 'Dodawnie postu')
 @section('podtytul', 'Dodaj post')
 @section('tresc')
-
-@dump($errors)
 @if ($errors->all())
 
     <div class="alert alert-danger">
