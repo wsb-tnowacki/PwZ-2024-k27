@@ -49,6 +49,9 @@
 </tbody>
 
 </table>
+@isset($posty)
+    {{$posty->links()}}
+@endisset
 <script>
     function confirmDelete()
     {
